@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(HomeScreen());
+  runApp(const HomeScreen());
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 70, 81, 241),
         body: Container(
           padding: const EdgeInsets.all(20.0),
           alignment: Alignment.center,
@@ -22,41 +23,42 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: 405,
+                      height: 375,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('images/splash.png'))),
-                    ),
-                    Text(
-                      "Fly Like a bird",
-                      style: GoogleFonts.poppins(
-                          fontSize: 40.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                              image: AssetImage('images/splas.png'))),
                     ),
                     const SizedBox(
-                      height: 20.0,
+                      height: 50.0,
                     ),
                     Text(
-                      "Lets fly with us\n and travelling around the world",
+                      "Effortless\nIntegrated app.",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 15.0),
+                          fontSize: 28.0,
+                          fontWeight: FontWeight.bold,
+                          color: const Color.fromRGBO(17, 17, 17, 1)),
+                    ),
+                    const SizedBox(
+                      height: 5.0,
                     ),
                     Container(
                       width: 220,
                       margin: const EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 40.0),
                       height: 55,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
                         style: TextButton.styleFrom(
-                            backgroundColor: Colors.white,
+                            backgroundColor:
+                                const Color.fromRGBO(95, 89, 225, 1),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(17.0))),
                         child: Text(
                           'Get Started',
-                          style:
-                              GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.bold, color: Colors.white),
                         ),
                       ),
                     )
